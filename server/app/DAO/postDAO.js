@@ -8,11 +8,11 @@ const postSchema = new mongoose.Schema({
     image: {type: String},
     text: {type: String},
 }, {
-    collection: 'dp_post'
+    collection: 'WS-post'
 });
 postSchema.plugin(uniqueValidator);
 
-const PostModel = mongoose.model('dp_post', postSchema);
+const PostModel = mongoose.model('post', postSchema);
 
 async function query() {
     const result = await PostModel.find({});
@@ -52,3 +52,4 @@ export default {
 
     model: PostModel
 };
+
